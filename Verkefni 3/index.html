@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verkefni 3 - MVC</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+
+<ul><b>1. 3% Svaraðu eftirfarandi spurningum?</b>
+    <li>a. Hvað er hönnunarmynstur?</li>
+    <li>b. Hvað er MVC? </li>
+    <li>c. Útskýrðu MVC í bakendavefþróun.</li>
+    <li>d. Útskýrðu MV* í framendavefþróun (SPA og client-side MVC).
+    </li></ul>
+
+<p><b>a.</b>Hönnunarmynstur er þegar farið er eftir ákveðnri reglu eða hefð sem er einhverskonar samkomulag um að það sé "rétti" hluturinn og það
+    auðveldar þeim sem þekkja til þess mynstur að vinna með, í sumum forritunartungumálum er t.d. venja að gera heiti á functionum og annað með camelcase eða þá byrja á litlum staf og hafa stóran staf í seinna orðinu af samsettu orði
+    t.d. hönnunarMynstur(), eða eins og MVC er, í flestum tilvikum eru hönnunarmynstrin gerð að reglu sem hægt er að gera ráð fyrir að virki á vissan máta og það getur minnkað eða útilokað það að þú þurfir að endurtaka kóðann og allt gengur
+    bara mun meira smooth og verður minna chaos </p>
+<p><b>b.</b>MVC er ákveðið hönnunarmynstur til að auðvelda vinnslu og gera betra skipulag á t.d. stórum vefum eða forritum, ef MVC er gert rétt þá er lítið mál að gera viðbætur við það sem maður er að vinna með án þess að þurfa breyta því á mörgum stöðum, það eru sumir sem tala um MVC sem framework, en það er ekki framework,
+    við hönnunina er þessu still upp í svona 3 aðal máta sem eru unnir þannig að þeir sjá meira og minna um bara ákveðinn hlut, þessu er skipt svona:
+    MVC: <br><b>Model</b><br><b>View</b><br><b>Controller</b><br><br>
+    <b>Model</b>, sér meira og minna um svona hvernig þetta á að haga sér og er með samskipti við gögnin, sem í flestum tilfellum væri gagnagrunnur, <br>
+    <b>View</b>, sér um útlitið, hvernig þetta lookar og hvernig upplýsingar skila sér útlitslega séð til notendans sem er að biðja um þær, t.d. hversu margir rammar komu, línur etc... <br>
+    <b>Controller</b>, sér um samskiptin milli notendans og modelsins, semsagt notandinn gerir einhvað í view og biður um einhvað eða sendir skipun, controllerinn tekur við þeirri skipun og biður modelið um þær upplýsingar og skilar því
+    til controllersins og controllerin skilar því til view og view skilar því á flottan hátt til notendans<br>
+    Góða við þetta er aðskilnaðurinn milli t.d vinnslu með gögnin og hvernig þetta lýtur út, ef þetta er gert rétt þá getur t.d. einhver sem sér bara um útlitið gert það án þess að þurfa eiga við Model eða controller.
+    <u>Dæmi um virkni</u><br>
+    Notandi er að horfa á skjá og slær inn nafn manneskju í dálk og ýtir á takka sem hetiir t.d. leita, þarna var notandinn inní <b>View</b> módelinu en þegar hann smellir á takkann þá fer
+    action í gang sem <b>controllerinn</b> sér um og hann tekur inputið frá notendanu og kemur því til <b>Modelsins</b>, sem síðan leitar í gögnunum sem það er með eða í gagnagrunninum finnur viðeigandi upplýsingar, skilar því aftur til <b>controller</b> og hann skilar því síðan í <b>View</b> og þaðan er það birt
+    aftur á skjá notendans, kannski í pop up glugga, eða jafnvel bara í strípuðu HTML, <b>viewið ræður</b>.</p>
+<p><b>c. Útskýrðu MVC í bakendavefþróun.</b>Bakendinn er ósýnilegi parturinn, semsagt samskipti við gagnagrunn og server og í bakendanum er meira unnið með Controllerinn og modelið en það þarf að vissu leyti að vita hvað Viewið vill geta skilað af sér, bakendinn er meira að spá í svona hvernig þetta virkar og hvernig það er sótt en er í raun sama hvað þetta er.</b> </p>
+<p><b>d. Útskýrðu MV* í framendavefþróun (SPA og client-side MVC).</b> Framendinn þarf í raun bara að vita hvað þeir eru að sækja og hvernig þeir vilja sýna það,en þeim er svona nett sama hvernig það er gert, þannig að framendinn er meira bara útlitð eða GUI-ið á vefnum eða applicationinu, ef við förum í tungumálin er viewið fyrst og fremst HTML,CSS,Javascript og er þetta þá sem stjórnar því sem notandinn sér</p>
+<p><b>2. 11% MVC Verkefni</b><br>
+    Búið til veflausn sem er byggð á MVC mynstrinu. Vefsíðan á að innihalda application
+    (module) fyrir notendur þar sem hægt er að velja bókarheiti úr (t.d. combo-box) og fá
+    bókalýsingu sem birtist á vefsíðu. Viðmót, uppsetning og útlit á vefsíðu á vera í algjöru
+    lágmarki. Hafðu hvern klasa í sér skrá í sameiginlegri möppu. Notaðu namespace og
+    autoloading með composer fyrir klasana. Notaðu Front controller fyrir routing.
+</p>
+
+<p><b>Model:</b> &nbsp &nbsp &nbsp Halda þarf utan um nafn bókar, útgáfu og útgáfuár. Aðferðir sem sjá um að sækja bókalista og bókalýsingu.</p>
+<p><b>Controller:</b>  Tekur við input frá notanda ( request) bregst við og uppfærir model eftir þörfum. </p>
+<p><b>View:</b> &nbsp &nbsp &nbsp Inniheldur alla “display logic” við framsetningu gagna (myndun HTML). Hefur beinan aðgang að Model (get data). View getur búið til callback (t.d. smellur) til Controller.</p>
+<p><b>Svar: <a href="http://178.62.67.77/Verkefni3/MVC/index.php">MVC Síðan</a></b></p>
+
+</body>
+</html>
