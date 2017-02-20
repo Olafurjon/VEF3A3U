@@ -11,7 +11,41 @@ namespace MVC;
 
 class model
 {
-    public $baekur = array(Nafn=>"Smile",Utgafa=>"Skoltaskik",Ar=>1994);
+
+private $baekur = array(array('id' => 0, 'Nafn' => "Smile",'Utgafa' => "Skoltaskik",'Ar' => 1994),array('id' => 1,'Nafn' => "PHP Extreme",'Utgafa' => "PHP Society",'Ar' => 2007),array('id' => 2,'Nafn' => "Litla Bláa Kannan",'Utgafa' => "Barnabækur EHF",'Ar' => 855));
+private $valinbok;
+
+    public function listiBoka()
+    {
+
+        return $this->baekur;
+    }
+
+    public function bokInfo($bok)
+    {
+        $this->valinbok = $bok;
+
+    }
+
+    public function skilabok()
+    {
+        echo $this->valinbok . " nice";
+
+        /*foreach ($this->baekur as $titill)
+        {
+            if($titill['id'] == $this->valinbok)
+            {
+                echo $titill['id'] . "<br>";
+                echo $this->valinbok . "<br>";
+
+                print_r($titill);
+
+            }
+        }*/
+
+
+        }
+
 
 
 }

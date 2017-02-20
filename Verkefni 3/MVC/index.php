@@ -4,6 +4,9 @@ spl_autoload_register(function ($class_name) {
     $class = end($parts);
     include "klasar/".$class.".php";
 });
+$model = new \MVC\model();
+$controller = new \MVC\controller($model);
+$view = new \MVC\view($model);
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,11 +15,14 @@ spl_autoload_register(function ($class_name) {
     <title>Verkefni 3 - MVC</title>
 </head>
 <body>
-<h2>sup</h2>
+<h2>Veldu Bók</h2>
 <?php
-$baekur = array("Nafn: Bók1 ,Útgáfa: Veisla, Útgáfuár: 1994","Nafn: Bók2 ,Útgáfa: Veisla2, Útgáfuár: 1995");
-$bok = explode(",",$baekur[1]);
-echo $bok[0]."<br>".$bok[1]."<br>".$bok[2];
+
+$view->birtaBaekur();
+$controller->hvadaBok();
+
+
+
 ?>
 
 

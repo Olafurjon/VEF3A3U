@@ -6,6 +6,7 @@
  * Time: 10:02
  */
 
+
 namespace MVC;
 
 
@@ -13,8 +14,16 @@ class controller
 {
 private $model;
 
+
 public function __construct(Model $model)
 {
 $this->model = $model;
 }
+
+public function hvadaBok()
+{
+
+    $this->model->bokInfo($_GET["baekur"]);
+}
+
 }
