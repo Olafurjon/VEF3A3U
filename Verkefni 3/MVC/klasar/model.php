@@ -23,28 +23,25 @@ private $valinbok;
 
     public function bokInfo($bok)
     {
+
         $this->valinbok = $bok;
 
     }
 
     public function skilabok()
     {
-        echo $this->valinbok . " nice";
-
-        /*foreach ($this->baekur as $titill)
-        {
-            if($titill['id'] == $this->valinbok)
-            {
-                echo $titill['id'] . "<br>";
-                echo $this->valinbok . "<br>";
-
-                print_r($titill);
-
+        foreach ($this->baekur as $titill) {
+            if ($titill['id'] == $_GET['baekur']) {
+                echo "<h1> Bók </h1> <br>";
+                echo "Nafn Bókar: " . $titill['Nafn'] . "<br>";
+                echo "Útgáfa Bókar: " . $titill['Utgafa'] . "<br>";
+                echo "Útgáfu ár: " . $titill['Ar'] . "<br>";
             }
-        }*/
+
 
 
         }
+    }
 
 
 

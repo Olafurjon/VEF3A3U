@@ -48,7 +48,7 @@ public function __construct(Model $model)
 
     public function hvadabok()
     {
-        echo "<h1> Bók </h1> <br>". $this->model->skilaBok();
+        $this->model->skilaBok();
 
     }
 

@@ -19,8 +19,6 @@ $view = new \MVC\view($model);
 <?php
 
 $view->birtaBaekur();
-$controller->hvadaBok();
-
 
 
 ?>

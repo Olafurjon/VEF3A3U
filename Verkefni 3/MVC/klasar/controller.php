@@ -23,7 +23,13 @@ $this->model = $model;
 public function hvadaBok()
 {
 
-    $this->model->bokInfo($_GET["baekur"]);
+    foreach ($this->model->listiBoka() as $titill)
+    {
+        if($titill['id'] == $_GET['baekur'])
+        {
+            $this->model->bokInfo($titill);
+        }
+    }
 }
 
 }
