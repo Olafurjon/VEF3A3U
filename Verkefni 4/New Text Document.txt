@@ -1,0 +1,8 @@
+CREATE DATABASE Verkefn4;
+
+Create Table Book (name VARCHAR(160), publisher VARCHAR(255), year DATE, description VARCHAR(255));
+
+
+INSERT INTO `Book`(`name`, `publisher`, `year`, `description`) VALUES ("PHP For Grandmasters","Error404",2002,"Have you ever heard of Andi Gutmans the co-creator of PHP, well what if i told you, that if you read this book you can become BETTER than him!");
+INSERT INTO `Book`(`name`, `publisher`, `year`, `description`) VALUES ("Hvað er klukkan herra kóla?","Samfélag kókísta",2008,"Hverjum er ekki sama hvað klukkan er gefðu mér bara kóka kóla!");
+INSERT INTO `Book`(`name`, `publisher`, `year`, `description`) VALUES ("Parry Hotter","Bagical Mooks",1589,"Your a Bizard Warry!");
