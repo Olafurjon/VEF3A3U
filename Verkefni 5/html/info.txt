@@ -1,0 +1,6 @@
+Digital Ocean server settur upp
+Digital ocean user: olafurva@nemi.tskoli.is
+Password: **********
+IP: 178.62.67.77
+Index síða: /var/www/html
+PHP ini skjal:/etc/php/7.0/cli/php.ini
