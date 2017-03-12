@@ -12,6 +12,7 @@ $JSON_A = json_decode($JSON,true);
 ?>
 <h2>Verkefni 5 - API</h2>
 
+
 <div class="Main">
     <form action="http://178.62.67.77/Verkefni5/sidur/addjason.php" method="post">
         <label>Nafn Myndar:</label> <br>

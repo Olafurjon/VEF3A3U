@@ -1,0 +1,33 @@
+
+JSON dæmi um petsu
+
+[
+
+{
+  "crust": "original",
+  "toppings": ["cheese", "pepperoni", "garlic"],
+  "status": "cooking",
+  "customer": {
+    "name": "Jimmy Kimmel",
+    "phone": "58-12345"
+  }
+}
+
+]
+
+
+
+XML dæmi
+<order>
+    <crust>original</crust>
+    <toppings>
+        <topping>cheese</topping>
+        <topping>pepperoni</topping>
+        <topping>garlic</topping>
+    </toppings>
+    <status>cooking</status>
+      <customer>
+        <name> Jimmy Kimmel </name>
+        <phone> 58-12345 </phone>
+      </customer>
+</order>

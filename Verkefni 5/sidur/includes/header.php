@@ -11,14 +11,14 @@
 <head>
     <title>Verkefni 5 - API</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="http://178.62.67.77/Verkefni5/css/style.css">
 </head>
 <body>
 <hr>
 <div class="nav">
-    <li><a href="<?php ?>sidur/spurningar.php">Spurningar</a> </li>
-    <li><a href="sidur/Json.php">Json</a></li>
+    <li><a href="http://178.62.67.77/Verkefni5/sidur/spurningar.php">Spurningar</a> </li>
+    <li><a href="http://178.62.67.77/Verkefni5/sidur/Json.php">Json</a></li>
+    <li><a href="http://178.62.67.77/Verkefni5/sidur/api.php">Gengisupplýsingar</a></li>
 
 </div>
 <hr>
