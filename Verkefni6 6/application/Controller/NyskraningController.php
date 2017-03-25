@@ -38,18 +38,32 @@ class NyskraningController
      * the user back to songs/index via the last line: header(...)
      * This is an example of how to handle a POST request.
      */
-    public function addSong()
+    public function nyskra()
     {
         // if we have POST data to create a new song entry
-        if (isset($_POST["submit_add_song"])) {
+        if (isset($_POST["nyskra"])) {
             // Instance new Model (Song)
-            $Song = new Song();
+            $notandi = new Nyskraning();
             // do addSong() in model/model.php
-            $Song->addSong($_POST["artist"], $_POST["track"],  $_POST["link"]);
+            if($notandi->nyskra($_POST["nafn"], $_POST["username"],  $_POST["pass"]) == true)
+            {
+                $_SESSION['user'] = $_POST['username'];
+            }
+            else
+            {
+                echo "<script>alert('shit')</script>";
+            }
+
         }
 
         // where to go after song has been added
-        header('location: ' . URL . 'songs/index');
+
+    }
+
+    public function validation()
+    {
+        $notandi = new Nyskraning();
+        $notandi->validateForm();
     }
 
     /**

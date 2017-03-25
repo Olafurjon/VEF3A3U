@@ -2,40 +2,43 @@
 <!-- About Us Page
 ==========================================-->
 <div id="tf-about">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <img src="<?php echo URL; ?>img/02.png" class="img-responsive">
+    <div class="container text-center">
+        <div class="col-md-6">
+            <div class="section-title ">
+                <h4>Innskráning</h4>
             </div>
-            <div class="col-md-6">
-                <div class="about-text">
-                    <div class="section-title">
-                        <h4>Um okkur</h4>
-                        <h2>VIÐ Í <strong>STUTTU MÁLI</strong></h2>
+            <hr>
+            <div class="clearfix"></div>
+            <form class="register" action="#">
+                <label for="username">Notendanafn:</label>
+                <input id="user" name="user" type="text"><br>
+                <label for="pass">Lykilorð:</label>
+                <input id="pass" type="password"><br>
+                <input name="innskra" type="submit" value="Innskrá">
+            </form>
+        </div>
+        <div class="col-md-6">
+                    <div class="section-title ">
+                        <h4>Nýskraning</h4>
+                    </div>
                         <hr>
                         <div class="clearfix"></div>
-                    </div>
-                    <p class="intro">Það er ekkert sem okkur líkar betur við en árangur, hvort sem það er andlegur, líkamlegur eða efnahagslegur en þegar manni líður vel andlega og líkamlega þá er maður líklegri til að standa sig vel í lífinu og þá bætist það efnahagslega.</p>
-                    <ul class="about-list">
-                        <li>
-                            <span class="fa fa-dot-circle-o"></span>
-                            <strong>Æfingarpógram</strong> - <em>Sérsniðin, hnitmiðin, unnin með þér fyrir þig</em>
-                        </li>
-                        <li>
-                            <span class="fa fa-dot-circle-o"></span>
-                            <strong>Matarprógram</strong> - <em>Já, við mælum með nammidögum</em>
-                        </li>
-                        <li>
-                            <span class="fa fa-dot-circle-o"></span>
-                            <strong>Árangur</strong> - <em>Númer 1,2 og 3 eru ánægðir viðskiptavinir</em>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+                        <form class="register" action="<?php echo URL;?>Nyskraning/nyskra" method="post">
+                        <label for="nafn">Nafn:</label>
+                        <input id="nafn" name="nafn" type="text" required>
+                            <label for="username">Notendanafn:</label>
+                            <span id="user-availability-status"></span>
+                        <input id="username" name="username" type="text" required onBlur="checkAvailability()"><br>
+                            <label for="pass">Lykilorð:</label>
+                        <input id="pass" name="pass" type="password" required>
+                        <label for="confpass" >Staðfesta Lykilorð:</label>
+                        <input id="confpass" name="confpass" type="password" required>
+
+                            <input name="nyskra" type="submit" value="Nýskrá">
+                        </form>
+                        </div>
         </div>
     </div>
-</div>
-
 
 <!-- Hvatningarorðin
 ==========================================-->
@@ -69,17 +72,17 @@
                             ?>
 
                             <h5><?php echo $JSON_dec[$x]['Quote'];?></h5>
-                            <p><?php echo $JSON_dec[$x][' Author'];?></p>
+                            <p><?php echo $JSON_dec[$x]['Author'];?></p>
                         </div>
 
                         <div class="item">
                             <h5><?php echo $JSON_dec[$y]['Quote'];?></h5>
-                            <p><?php echo $JSON_dec[$y][' Author'];?></p>
+                            <p><?php echo $JSON_dec[$y]['Author'];?></p>
                         </div>
 
                         <div class="item">
                             <h5><?php echo $JSON_dec[$z]['Quote'];?></h5>
-                            <p><?php echo $JSON_dec[$z][' Author'];?></p>
+                            <p><?php echo $JSON_dec[$z]['Author'];?></p>
                         </div>
                     </div>
                 </div>
@@ -87,6 +90,7 @@
         </div>
     </div>
 </div>
+<script src="<?php echo URL; ?>js/formvalidate.js" type="text/javascript"></script>
 
 
 

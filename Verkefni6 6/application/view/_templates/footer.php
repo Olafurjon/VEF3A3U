@@ -2,7 +2,7 @@
 <nav id="footer">
     <div class="container">
         <div class="pull-left fnav">
-            <p>ALL RIGHTS RESERVED. COPYRIGHT © 2014. Designed by <a href="https://dribbble.com/shots/1817781--FREEBIE-Spirit8-Digital-agency-one-page-template">Robert Berki</a> and Coded by <a href="https://dribbble.com/jennpereira">Jenn Pereira</a> Moddað by Ólafur Jón</p>
+            <p>Hafa Samband <a href="olafurjon@hotmail.com">Olafurjonb@hotmail.com</a> Github: <a href="https://github.com/Olafurjon/VEF3A3U/tree/master/Verkefni6%206">Github/Olafurjon</a></p>
         </div>
         <div class="pull-right fnav">
             <ul class="footer-social">

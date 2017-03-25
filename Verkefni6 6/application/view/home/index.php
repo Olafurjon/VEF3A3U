@@ -272,17 +272,17 @@
                             ?>
 
                             <h5><?php echo $JSON_dec[$x]['Quote'];?></h5>
-                            <p><?php echo $JSON_dec[$x][' Author'];?></p>
+                            <p><?php echo $JSON_dec[$x]['Author'];?></p>
                         </div>
 
                         <div class="item">
                             <h5><?php echo $JSON_dec[$y]['Quote'];?></h5>
-                            <p><?php echo $JSON_dec[$y][' Author'];?></p>
+                            <p><?php echo $JSON_dec[$y]['Author'];?></p>
                         </div>
 
                         <div class="item">
                             <h5><?php echo $JSON_dec[$z]['Quote'];?></h5>
-                            <p><?php echo $JSON_dec[$z][' Author'];?></p>
+                            <p><?php echo $JSON_dec[$z]['Author'];?></p>
                         </div>
                     </div>
                 </div>
