@@ -27,6 +27,7 @@ class NyskraningController
        // load views. within the views we can echo out $songs and $amount_of_songs easily
         require APP . 'view/_templates/header.php';
         require APP . 'view/nyskraning/index.php';
+
         require APP . 'view/_templates/footer.php';
     }
 
@@ -40,19 +41,24 @@ class NyskraningController
      */
     public function nyskra()
     {
+        include APP . 'view/nyskraning/index.php';
         // if we have POST data to create a new song entry
         if (isset($_POST["nyskra"])) {
             // Instance new Model (Song)
             $notandi = new Nyskraning();
             // do addSong() in model/model.php
-            if($notandi->nyskra($_POST["nafn"], $_POST["username"],  $_POST["pass"]) == true)
+            $ret =  $notandi->nyskra($_POST["nafn"], $_POST["username"],  $_POST["pass"]);
+            if($ret == true)
             {
-                $_SESSION['user'] = $_POST['username'];
+                print("virkaði");
+                $_SESSION['username'] = $_POST['username'];
+                print($_SESSION['username']);
             }
-            else
-            {
-                echo "<script>alert('shit')</script>";
+            else{
+                print("virkaði ekki");
             }
+
+
 
         }
 
@@ -87,6 +93,28 @@ class NyskraningController
 
         // where to go after song has been deleted
         header('location: ' . URL . 'songs/index');
+    }
+
+    function Innskra()
+    {
+        $this->index();
+
+        if (isset($_POST['innskra'])) {
+            $notandi = new Nyskraning();
+            $obj = $notandi->logIn($_POST['user'], $_POST['pass']);
+            $ret = array($obj);
+            if ($ret[0]->username == $_POST['user']) {
+                $_SESSION['username'] = $_POST['user'];
+            } else {
+                print "lykilorð";
+            }
+
+
+
+
+        }
+        header('location: ' . URL . 'nyskraning/');
+
     }
 
      /**

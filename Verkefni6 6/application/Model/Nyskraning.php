@@ -68,14 +68,12 @@ class Nyskraning extends Model
 
         // useful for debugging: you can see the SQL behind above construction by using:
         // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
-        try {
-            $ret = $query->execute($parameters);
-            return true;
-        }
-        catch (\PDOException $e)
-        {
-            return false;
-        }
+
+        $query->execute($parameters);
+        return $query;
+
+
+
 
     }
 
@@ -103,11 +101,11 @@ class Nyskraning extends Model
      * Get a song from database
      * @param integer $song_id
      */
-    public function getSong($song_id)
+    public function logIn($username,$password)
     {
-        $sql = "SELECT id, artist, track, link FROM song WHERE id = :song_id LIMIT 1";
+        $sql = "SELECT username  FROM userbase WHERE username = :username AND pass = :pass LIMIT 1";
         $query = $this->db->prepare($sql);
-        $parameters = array(':song_id' => $song_id);
+        $parameters = array(':username' => $username, ':pass' => $password);
 
         // useful for debugging: you can see the SQL behind above construction by using:
         // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();

@@ -607,3 +607,6 @@ span#user-availability-status {
 	position: absolute;
 	margin-left: 15%;
 }
+p.under {
+	font-size: 50%;
+}
