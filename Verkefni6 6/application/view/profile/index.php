@@ -1,42 +1,44 @@
-
+<?php print_r($info) ?>
 <!-- About Us Page
 ==========================================-->
 <div id="tf-about">
     <div class="container text-center">
-        <div class="col-md-6">
+        <div class="col-md-9">
+
             <div class="section-title ">
-                <h4>Innskráning</h4>
+                <h4>Upplýsingar</h4>
+
+                <form class="register" action="<?php echo URL;?>profile/breyta" method="post">
+                    <label for="nafn">Nafn:</label>
+                    <input id="nafn" name="nafn" type="text" value=" <?php echo $info[0]->name; ?>" required>
+                    <label for="user">Notendanafn:</label>
+                    <span id="user-availability-status"></span>
+                    <input id="user" name="user" type="text" value="<?php echo $info[0]->username;?>" readonly ><br>
+                    <label for="pass">Lykilorð:</label>
+                    <input id="pass" name="pass" type="password" required>
+                    <label for="confpass" >Staðfesta Lykilorð:</label>
+                    <input id="confpass" name="confpass" type="password" required>
+                    <label for="datejoined" >Byrjaðir:</label>
+                    <input id="datejoined" name="datejoined" type="datetime" value="<?php echo $info[0]->date_joined;?>" disabled >
+                    <input id="btbreyta" name="breyta" type="submit" value="Breyta">
+                </form>
+
             </div>
+
             <hr>
             <div class="clearfix"></div>
-            <form class="register" action="<?php echo URL;?>nyskraning/innskra" method="post">
-                <label for="user">Notendanafn:</label>
-                <input id="user" name="user" type="text"><br>
-                <label for="pass">Lykilorð:</label>
-                <input id="pass" name="pass" type="password"><br>
-                <input name="innskra" type="submit" value="Innskrá">
-            </form>
-            <h2><?php print_r($_SESSION) ?></h2>
+
         </div>
-        <div class="col-md-6">
+        <div class="col-md-3">
                     <div class="section-title ">
-                        <h4>Nýskraning</h4>
+                        <h4>Mynd</h4>
                     </div>
                         <hr>
                         <div class="clearfix"></div>
-                        <form class="register" action="<?php echo URL;?>nyskraning/nyskra" method="post">
-                        <label for="nafn">Nafn:</label>
-                        <input id="nafn" name="nafn" type="text" required>
-                            <label for="username">Notendanafn:</label>
-                            <span id="user-availability-status"></span>
-                        <input id="username" name="username" type="text" required onBlur="checkAvailability()"><br>
-                            <label for="pass">Lykilorð:</label>
-                        <input id="pass" name="pass" type="password" required>
-                        <label for="confpass" >Staðfesta Lykilorð:</label>
-                        <input id="confpass" name="confpass" type="password" required>
-
-                            <input id="btnyskra" name="nyskra" type="submit" value="Nýskrá">
-                        </form>
+            <form class="logout" action="<?php echo URL;?>profile/logout" method="post">
+                <img src="<?php echo URL.'/img/profile/dp_default/defaultmale.png';?>"
+                <input name="logout" type="submit" value="Skrá Út">
+            </form>
                         </div>
         </div>
     </div>

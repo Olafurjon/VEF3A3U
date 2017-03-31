@@ -24,11 +24,11 @@ class NyskraningController
      */
     public function index()
     {
-       // load views. within the views we can echo out $songs and $amount_of_songs easily
+        // load views. within the views we can echo out $songs and $amount_of_songs easily
         require APP . 'view/_templates/header.php';
         require APP . 'view/nyskraning/index.php';
-
         require APP . 'view/_templates/footer.php';
+
     }
 
     /**
@@ -41,7 +41,8 @@ class NyskraningController
      */
     public function nyskra()
     {
-        include APP . 'view/nyskraning/index.php';
+        ob_start();
+        require APP . 'view/_templates/header.php';
         // if we have POST data to create a new song entry
         if (isset($_POST["nyskra"])) {
             // Instance new Model (Song)
@@ -50,17 +51,18 @@ class NyskraningController
             $ret =  $notandi->nyskra($_POST["nafn"], $_POST["username"],  $_POST["pass"]);
             if($ret == true)
             {
-                print("virkaði");
+                $this->index();
                 $_SESSION['username'] = $_POST['username'];
-                print($_SESSION['username']);
+                ob_get_clean();
+                header("Refresh:0");
             }
             else{
                 print("virkaði ekki");
             }
 
-
-
         }
+        header('location:'. URL.'profile' );
+
 
         // where to go after song has been added
 
@@ -92,30 +94,35 @@ class NyskraningController
         }
 
         // where to go after song has been deleted
-        header('location: ' . URL . 'songs/index');
+
     }
 
-    function Innskra()
+    function innskra()
     {
-        $this->index();
+        ob_start();
+        require APP . 'view/_templates/header.php';
 
         if (isset($_POST['innskra'])) {
             $notandi = new Nyskraning();
             $obj = $notandi->logIn($_POST['user'], $_POST['pass']);
             $ret = array($obj);
+            print_r($ret);
             if ($ret[0]->username == $_POST['user']) {
                 $_SESSION['username'] = $_POST['user'];
+                ob_get_clean();
+                header('location:'. URL.'nyskraning' );
+
             } else {
                 print "lykilorð";
             }
 
 
-
-
         }
-        header('location: ' . URL . 'nyskraning/');
+
 
     }
+
+
 
      /**
      * ACTION: editSong
