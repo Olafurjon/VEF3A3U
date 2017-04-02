@@ -16,7 +16,6 @@
                 <input id="pass" name="pass" type="password"><br>
                 <input name="innskra" type="submit" value="Innskrá">
             </form>
-            <h2><?php print_r($_SESSION) ?></h2>
         </div>
         <div class="col-md-6">
                     <div class="section-title ">

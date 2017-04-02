@@ -55,7 +55,7 @@ class ProfileController
 
         }
         print("logout");
-            header("location: http://178.62.25.29/");
+            #header("location: http://178.62.25.29/");
     }
 
     /**

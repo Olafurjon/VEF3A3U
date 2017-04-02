@@ -1,14 +1,16 @@
-<?php print_r($info) ?>
-<!-- About Us Page
-==========================================-->
+
 <div id="tf-about">
     <div class="container text-center">
         <div class="col-md-9">
 
             <div class="section-title ">
                 <h4>Upplýsingar</h4>
-
+            </div>
+            <div class="dpimg">
+            <img class="dpmynd" src="<?php echo URL.'/img/profile/dp_default/defaultmale.png';?>"
+            </div>
                 <form class="register" action="<?php echo URL;?>profile/breyta" method="post">
+
                     <label for="nafn">Nafn:</label>
                     <input id="nafn" name="nafn" type="text" value=" <?php echo $info[0]->name; ?>" required>
                     <label for="user">Notendanafn:</label>
@@ -18,7 +20,7 @@
                     <input id="pass" name="pass" type="password" required>
                     <label for="confpass" >Staðfesta Lykilorð:</label>
                     <input id="confpass" name="confpass" type="password" required>
-                    <label for="datejoined" >Byrjaðir:</label>
+                    <label for="datejoined" >Aðgangur Stofnaður:</label>
                     <input id="datejoined" name="datejoined" type="datetime" value="<?php echo $info[0]->date_joined;?>" disabled >
                     <input id="btbreyta" name="breyta" type="submit" value="Breyta">
                 </form>
@@ -28,18 +30,6 @@
             <hr>
             <div class="clearfix"></div>
 
-        </div>
-        <div class="col-md-3">
-                    <div class="section-title ">
-                        <h4>Mynd</h4>
-                    </div>
-                        <hr>
-                        <div class="clearfix"></div>
-            <form class="logout" action="<?php echo URL;?>profile/logout" method="post">
-                <img src="<?php echo URL.'/img/profile/dp_default/defaultmale.png';?>"
-                <input name="logout" type="submit" value="Skrá Út">
-            </form>
-                        </div>
         </div>
     </div>
 

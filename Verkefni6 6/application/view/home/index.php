@@ -144,7 +144,7 @@
         <div class="container">
 
             <div class="section-title center">
-                <h2>VIÐ MÆLUM <strong>MEÐ</strong></h2>
+                <h2>Í SAMSTARFI <strong>MEÐ</strong></h2>
                 <div class="line">
                     <hr>
                 </div>

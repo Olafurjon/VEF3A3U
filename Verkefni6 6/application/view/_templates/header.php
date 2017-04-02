@@ -71,7 +71,6 @@ else
                     else {echo "<li><a href=". URL."nyskraning" . " class=\"page-scroll\">Nýskráning/Innskrá</a></li>";}?>
                     <li><a href="#tf-works" class="page-scroll">Flísar</a></li>
                     <li><a href="#tf-testimonials" class="page-scroll">Hvatningarorð</a></li>
-                    <?php echo URL ?>
                     <?php if(isset($_SESSION['username'])){ echo "<li><a href=". URL. 'profile/logoutlink'." class=\"page-scroll\">Skrá út</a></li>";} ?>
                 </ul>
             </div><!-- /.navbar-collapse -->
