@@ -1,8 +1,6 @@
 
 
 
-<!-- Home Page
-==========================================-->
 <div id="tf-home" class="text-center">
     <div class="overlay">
         <div class="content">
@@ -13,8 +11,7 @@
     </div>
 </div>
 
-<!-- About Us Page
-==========================================-->
+
 <div id="tf-about">
     <div class="container">
         <div class="row">
@@ -50,8 +47,6 @@
     </div>
 </div>
 
-<!-- Team Page
-==========================================-->
                 <div id="tf-team" class="text-center">
                     <div class="overlay">
                         <div class="container">
@@ -96,8 +91,6 @@
     </div>
 </div>
 
-<!-- Services Section
-==========================================-->
 <div id="tf-services" class="text-center">
     <div class="container">
         <div class="section-title center">
@@ -137,8 +130,6 @@
     </div>
 </div>
 
-<!-- Clients Section
-==========================================-->
 <div id="tf-clients" class="text-center">
     <div class="overlay">
         <div class="container">
@@ -177,8 +168,6 @@
     </div>
 </div>
 
-<!-- Æfingasection
-==========================================-->
 <div id="tf-works">
     <div class="container"> <!-- Container -->
         <div class="section-title text-center center">
@@ -211,7 +200,7 @@
         </div>
 
         <div id="lightbox" class="row">
-
+            <!-- Kallað í JSONskránna til að lesa upp flísarnar fyrir staðlaðar  æfingar --->
             <?php $jsonaef = file_get_contents("http://178.62.25.29/JSON/tileaefingar.JSON");
             $aefingar = json_decode($jsonaef,true);
 
@@ -240,8 +229,8 @@
     </div>
 </div>
 
-<!-- Hvatningarorðin
-==========================================-->
+<!-- Hvatningarorðin -->
+
 <div id="tf-testimonials" class="text-center">
     <div class="overlay">
         <div class="container">
@@ -255,6 +244,7 @@
                 <div class="col-md-8 col-md-offset-2">
                     <div id="testimonial" class="owl-carousel owl-theme">
                         <div class="item">
+                            <!-- Lesið random quote úr JSON quote skrá og birt 3 við hvert refresh -->
                             <?php $json = file_get_contents("http://178.62.25.29/JSON/quotes.JSON");
                             $JSON_dec = json_decode($json,true);
                             $x = random_int(0,count($JSON_dec) -1);
