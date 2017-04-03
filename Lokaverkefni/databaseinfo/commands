@@ -1,0 +1,2 @@
+CREATE TABLE `Lokaverkefni`.`userbase` ( `userid` INT(255) NOT NULL , `name` VARCHAR(255) NOT NULL , `sex` VARCHAR(10) NULL , `email` VARCHAR(255) NOT NULL , `username` VARCHAR(255) NOT NULL , `pass` VARCHAR(255) NOT NULL DEFAULT 'pass.123' , `date_joined` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , `profilepic` VARCHAR(255) NULL , PRIMARY KEY (`userid`), UNIQUE (`username`)) ENGINE = InnoDB;
+
