@@ -13,8 +13,8 @@
                         <input id="nafn" name="nafn" type="text" required>
                             <label for="kyn">Kyn:</label>
                             <select name="kyn" id="kyn">
-                            <option id="KK" name="KK" value="KK">Karlkyns</option>
-                            <option id="KVK" name="KVK" value="KVK">Kvenkyns</option>
+                            <option id="KK" name="KK" value="Karlkyns">Karlkyns</option>
+                            <option id="KVK" name="KVK" value="Kvenkyns">Kvenkyns</option>
                             </select>
                             <label for="email">Netfang:</label>
                             <input id="email" name="email" type="email" required>

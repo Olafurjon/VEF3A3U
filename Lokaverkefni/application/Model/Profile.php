@@ -22,7 +22,7 @@ class Profile extends Model
     public function getUserInfo($username)
     {
 
-        $sql = "SELECT name, username, pass, date_joined FROM userbase WHERE username ='".$username."'";
+        $sql = "SELECT name, username,email,sex, pass, date_joined,profilepic FROM userbase WHERE username ='".$username."'";
 
         $query = $this->db->prepare($sql);
         $query->execute();
@@ -57,38 +57,19 @@ class Profile extends Model
         ob_get_clean();
     }
 
-
-
-    /**
-     * Add a song to database
-     * TODO put this explanation into readme and remove it from here
-     * Please note that it's not necessary to "clean" our input in any way. With PDO all input is escaped properly
-     * automatically. We also don't use strip_tags() etc. here so we keep the input 100% original (so it's possible
-     * to save HTML and JS to the database, which is a valid use case). Data will only be cleaned when putting it out
-     * in the views (see the views for more info).
-     * @param string $artist Artist
-     * @param string $track Track
-     * @param string $link Link
-     */
-    public function nyskra($name, $username, $pass)
+    public function checkforpic()
     {
-
-        $sql = "INSERT INTO userbase (name, username, pass) VALUES (:name, :username, :pass)";
+        ob_start();
+        require APP . 'view/_templates/header.php';
+        $sql = "SELECT profilepic  FROM userbase where username ='". $_SESSION["username"]. "'";
         $query = $this->db->prepare($sql);
-        $parameters = array(':name' => $name, ':username' => $username, ':pass' => $pass);
-
-        // useful for debugging: you can see the SQL behind above construction by using:
-        // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
-
-        $query->execute($parameters);
-        return $query;
-
-
-
-
+        $query->execute();
+        $object = $query->fetch();
+        $row = array($object);
+        $userpic = $row[0]->profilepic;
+        print $userpic;
+        ob_get_clean();
     }
-
-
 
     /**
      * Delete a song in the database
@@ -164,4 +145,58 @@ class Profile extends Model
         // fetch() is the PDO method that get exactly one result
         return $query->fetch()->amount_of_songs;
     }
+
+    public function UploadDP()
+    {
+
+            ob_start();
+            require APP . 'view/_templates/header.php';
+            $username = $_SESSION['username'];
+            require APP . 'Model/Upload.php';
+
+
+            $destination = $_SERVER['DOCUMENT_ROOT'] . "/img/profile/".$username."/";;
+            $max = 5000000;
+            try {
+                $loader = new Upload($destination);
+                $loader->allowAllTypes(false);
+                $loader->setMaxSize($max);
+                $loader->upload();
+                $result = $loader->getMessages();
+
+                $path = URL . "/img/profile/".$username."/profile.jpg";
+
+                $sql = "update userbase set profilepic = :path";
+                $query = $this->db->prepare($sql);
+                $parameters = array(':path' => $path);
+
+                $query->execute($parameters);
+                return $query;
+
+
+
+            } catch (Exception $e) {
+                echo $e->getMessage();
+
+            }
+
+            if (isset($result)){
+                echo '<ul>';
+                foreach ($result as $message) {
+                    echo "<li>$message</li>";
+                }
+                echo "</ul>";
+            }
+            ob_get_clean();
+
+
+
+
+
+
+    }
+
 }
+
+
+

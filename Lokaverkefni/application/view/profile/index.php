@@ -7,14 +7,23 @@
                 <h4>Upplýsingar</h4>
             </div>
             <div class="dpimg">
-            <img class="dpmynd" src="<?php echo URL.'/img/profile/dp_default/defaultmale.png';?>"
+            <img class="dpmynd" <?php if($info[0]->profilepic != null){echo 'src="'.$info[0]->profilepic.'"';} else {echo 'src="'.URL.'/img/profile/dp_default/defaultmale.png"';}?>">
+                <form action="<?php echo URL;?>profile/upload" method="post" enctype="multipart/form-data" >
+                        <label for="image">Skráarval</label>
+                        <input type="file" name="image" id="image"  >
+                        <input type="submit" name="upload" id="upload" value="Upload">
+                </form>
             </div>
                 <form class="register" action="<?php echo URL;?>profile/breyta" method="post">
 
                     <label for="nafn">Nafn:</label>
                     <input id="nafn" name="nafn" type="text" value=" <?php echo $info[0]->name; ?>" required>
-                    <label for="user">Notendanafn:</label>
-                    <input id="user" name="user" type="text" value="<?php echo $info[0]->username;?>" readonly ><br>
+                    <label for="username">Notendanafn:</label>
+                    <input id="username" name="username" type="text" value=" <?php echo $info[0]->username; ?>" readonly>
+                    <label for="user">Netfang:</label>
+                    <input id="user" name="user" type="email" value="<?php echo $info[0]->email;?>" readonly ><br>
+                    <label for="kyn">Kyn:</label>
+                    <input id="kyn" name="kyn" type="text" value="<?php echo $info[0]->sex;?>" readonly ><br>
                     <label for="pass">Lykilorð:</label>
                     <input id="pass" name="pass" type="password" required>
                     <label for="confpass" >Staðfesta Lykilorð:</label>

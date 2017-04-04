@@ -47,6 +47,8 @@ class ProfileController
         header("location: http://178.62.25.29/");
     }
 
+
+
     public function logout()
         {
         $notandi = new Profile();
@@ -95,6 +97,16 @@ class ProfileController
 
         // where to go after song has been deleted
         header('location: ' . URL . 'songs/index');
+    }
+
+    public function upload()
+    {
+        if (isset($_POST['upload'])) {
+        $profile = new Profile();
+        $profile->UploadDP();
+        header('location: ' . URL . 'profile/');
+
+        }
     }
 
 

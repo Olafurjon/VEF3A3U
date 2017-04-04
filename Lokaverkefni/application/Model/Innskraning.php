@@ -48,36 +48,6 @@ class Innskraning extends Model
 
 
 
-    /**
-     * Add a song to database
-     * TODO put this explanation into readme and remove it from here
-     * Please note that it's not necessary to "clean" our input in any way. With PDO all input is escaped properly
-     * automatically. We also don't use strip_tags() etc. here so we keep the input 100% original (so it's possible
-     * to save HTML and JS to the database, which is a valid use case). Data will only be cleaned when putting it out
-     * in the views (see the views for more info).
-     * @param string $artist Artist
-     * @param string $track Track
-     * @param string $link Link
-     */
-    public function nyskra($name, $username, $pass)
-    {
-
-        $sql = "INSERT INTO userbase (name, username, pass) VALUES (:name, :username, :pass)";
-        $query = $this->db->prepare($sql);
-        $parameters = array(':name' => $name, ':username' => $username, ':pass' => $pass);
-
-        // useful for debugging: you can see the SQL behind above construction by using:
-        // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
-
-        $query->execute($parameters);
-        return $query;
-
-
-
-
-    }
-
-
 
     /**
      * Delete a song in the database

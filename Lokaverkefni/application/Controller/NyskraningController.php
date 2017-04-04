@@ -51,9 +51,11 @@ class NyskraningController
             $ret =  $notandi->nyskra($_POST["nafn"],$_POST['kyn'],$_POST['email'], $_POST["username"], $_POST["pass"]);
             if($ret == true)
             {
+                $username = $_POST['username'];
                 $_SESSION['username'] = $_POST['username'];
+                mkdir($_SERVER['DOCUMENT_ROOT'] . "/img/profile/".$username."/");
                 ob_get_clean();
-                #header("Refresh:0");
+                header('location:'. URL.'profile' );
             }
             else{
                 print("virkaði ekki");
@@ -187,3 +189,4 @@ class NyskraningController
     }
 
 }
+
