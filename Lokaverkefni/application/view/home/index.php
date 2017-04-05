@@ -210,6 +210,8 @@
             <div class="clearfix"></div>
         </div>
 
+
+        <div class="kassi" >
         <div id="lightbox" class="row">
 
             <?php $jsonaef = file_get_contents("http://178.62.25.29/JSON/tileaefingar.JSON");
@@ -217,10 +219,13 @@
 
             foreach ($aefingar as $aef)
             {
+
                 echo '<div class="col-sm-6 col-md-3 col-lg-3 ' . $aef["Group"] . '">';
+                echo '<a href="#media-popup" data-media="//'.$aef["Link"].'">';
                 echo '<div class="portfolio-item">';
                 echo '<div class="hover-bg">';
-                echo '<a href="' . $aef["Link"] .'">';
+
+
                 echo '<div class="hover-text">';
                 echo '<h4>'.$aef["Nafn"].'</h4>';
                 echo "<small>Æfingar</small>";
@@ -228,12 +233,14 @@
                 echo "<i class=\"fa fa-plus\"></i>";
                 echo "</div>";
                 echo '<img src="'.$aef["Mynd"].'" class="img-responsive workmynd" alt="...">';
-                echo "</a> </div> </div> </div> ";
+                echo '<div class="popup" id="media-popup"><iframe width="560" height="315" src="'.$aef['Link'].'" frameborder="0" allowfullscreen></iframe></div>';
+                echo "</a> </div> </div> </div></a> ";
+
             }
 
 
             ?>
-
+        </div>
 
 
         </div>

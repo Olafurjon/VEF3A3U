@@ -9,7 +9,7 @@
             </div>
             <hr>
             <div class="clearfix"></div>
-            <form class="register" action="<?php echo URL;?>nyskraning/innskra" method="post">
+            <form class="register" action="<?php echo URL;?>innskraning/innskra" method="post">
                 <label for="user">Notendanafn:</label>
                 <input id="user" name="user" type="text"><br>
                 <label for="pass">Lykilorð:</label>

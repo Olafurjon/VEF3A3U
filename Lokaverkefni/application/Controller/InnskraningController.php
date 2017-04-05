@@ -65,19 +65,19 @@ class InnskraningController
         require APP . 'view/_templates/header.php';
 
         if (isset($_POST['innskra'])) {
-            $notandi = new Nyskraning();
+            $notandi = new Innskraning();
             $obj = $notandi->logIn($_POST['user'], $_POST['pass']);
             $ret = array($obj);
             print_r($ret);
             if ($ret[0]->username == $_POST['user']) {
                 $_SESSION['username'] = $_POST['user'];
-
+                ob_get_clean();
                 header('location:'. URL.'profile' );
 
             } else {
                 print "lykilorð";
             }
-            ob_get_clean();
+
 
         }
 
