@@ -90,11 +90,7 @@
                     </div>
                 </div>
 
-            </div>
 
-        </div>
-    </div>
-</div>
 
 <!-- Services Section
 ==========================================-->
@@ -180,6 +176,7 @@
 <!-- Æfingasection
 ==========================================-->
 <div id="tf-works">
+
     <div class="container"> <!-- Container -->
         <div class="section-title text-center center">
             <h2>KÍKTU A NOKKRAR<strong> ÆFINGAR</strong></h2>
@@ -210,8 +207,7 @@
             <div class="clearfix"></div>
         </div>
 
-
-        <div class="kassi" >
+        <div class="popup" id="media-popup"><iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe></div>
         <div id="lightbox" class="row">
 
             <?php $jsonaef = file_get_contents("http://178.62.25.29/JSON/tileaefingar.JSON");
@@ -233,19 +229,20 @@
                 echo "<i class=\"fa fa-plus\"></i>";
                 echo "</div>";
                 echo '<img src="'.$aef["Mynd"].'" class="img-responsive workmynd" alt="...">';
-                echo '<div class="popup" id="media-popup"><iframe width="560" height="315" src="'.$aef['Link'].'" frameborder="0" allowfullscreen></iframe></div>';
+                echo '';
                 echo "</a> </div> </div> </div></a> ";
 
             }
 
 
             ?>
+
         </div>
+
 
 
         </div>
     </div>
-</div>
 
 <!-- Hvatningarorðin
 ==========================================-->

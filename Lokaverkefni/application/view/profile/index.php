@@ -1,4 +1,4 @@
-
+<?php header("Cache-Control: no-cache, must-revalidate") ?> <!-- Þessi lína hreinsar cacheið svo að vafrinn festist ekki á einni profile mynd -->
 <div id="tf-about tf-about-profile">
     <div class="container text-center">
         <div class="col-md-9">
@@ -7,11 +7,11 @@
                 <h4>Upplýsingar</h4>
             </div>
             <div class="dpimg">
-            <img class="dpmynd" <?php if($info[0]->profilepic != null){echo 'src="'.$info[0]->profilepic.'"';} else {echo 'src="'.URL.'/img/profile/dp_default/defaultmale.png"';}?>">
+                <?php if ($info[0]->sex == "Kvenkyns"){ $pic = 'src="'.URL.'/img/profile/dp_default/defaultfemale.jpg"';} else { $pic = 'src="'.URL.'/img/profile/dp_default/defaultmale.png"';}  ?>
+            <img class="dpmynd" <?php if($info[0]->profilepic != null){echo 'src="'.$info[0]->profilepic.'"';} else {echo $pic;}?>">
                 <form action="<?php echo URL;?>profile/upload" method="post" enctype="multipart/form-data" >
-                        <label for="image">Skráarval</label>
                         <input type="file" name="image" id="image"  >
-                        <input type="submit" name="upload" id="upload" value="Upload">
+                        <input type="submit" name="upload" id="upload" value="Breyta" >
                 </form>
             </div>
                 <form class="register" action="<?php echo URL;?>profile/breyta" method="post">
@@ -92,7 +92,7 @@
     </div>
 </div>
 <script src="<?php echo URL; ?>js/formvalidate.js" type="text/javascript"></script>
-
+<script type="text/javascript" src="<?PHP echo URL ?>js/bootstrap-filestyle.min.js"> </script>
 
 
 

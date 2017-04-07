@@ -113,6 +113,7 @@ class Upload extends Model{
     protected function moveFile($file)
     {
         $filename = "profile.jpg";
+
         $success = move_uploaded_file($file['tmp_name'], $this->destination . $filename);
         if ($success) {
             $result = $file['name'] . ' Aðgerð tókst';

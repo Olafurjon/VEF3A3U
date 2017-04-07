@@ -66,10 +66,10 @@ else
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="http://178.62.25.29" class="page-scroll">Home</a></li>
-                    <li><a href="#tf-about" class="page-scroll">Æfingar</a></li>
+                    <li><a href="<?php URL ?>aefingar" class="page-scroll">Æfingar</a></li>
                     <?php if(isset($_SESSION['username'])){ echo "<li><a href=". URL."profile" ." class=\"page-scroll\">Mín Síða</a></li>";}
                     else {echo "<li><a href=". URL."nyskraning" . " class=\"page-scroll\">Nýskráning</a></li>";echo "<li><a href=". URL."innskraning" . " class=\"page-scroll\">Innskraning</a></li>";}?>
-                    <li><a href="#tf-works" class="page-scroll">Flísar</a></li>
+                    <li><a href="http://178.62.25.29/#tf-works" class="page-scroll">Flísar</a></li>
                     <li><a href="#tf-testimonials" class="page-scroll">Hvatningarorð</a></li>
                     <?php if(isset($_SESSION['username'])){ echo "<li><a href=". URL. 'profile/logoutlink'." class=\"page-scroll\">Skrá út</a></li>";} ?>
                 </ul>

@@ -166,9 +166,9 @@ class Profile extends Model
 
                 $path = URL . "/img/profile/".$username."/profile.jpg";
 
-                $sql = "update userbase set profilepic = :path";
+                $sql = "update userbase set profilepic = :path WHERE username = :username";
                 $query = $this->db->prepare($sql);
-                $parameters = array(':path' => $path);
+                $parameters = array(':path' => $path, ':username' => $username);
 
                 $query->execute($parameters);
                 return $query;
