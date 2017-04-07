@@ -126,19 +126,22 @@ function main() {
 
             $popupIframe.attr("src", videoUrl);
 
-            $this.closest(".portfolio-item").addClass("show-popup");
+            $(".popup").addClass("show-popup");
         });
 
         $(".popup").on("click", function(e) {
             e.preventDefault();
             e.stopPropagation();
-
-            $(".portfolio-item").removeClass("show-popup");
+            var $popupIframe = $(".popup").find("iframe");
+            $popupIframe.attr("src","null");
+            $(".popup").removeClass("show-popup");
         });
 
         $(".popup > iframe").on("click", function(e) {
             e.stopPropagation();
         });
+
+        $(":file").filestyle({buttonText: "Find file"});
 
     });
 

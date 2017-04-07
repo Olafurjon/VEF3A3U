@@ -628,8 +628,7 @@ img.dpmynd {
 }
 .popup {
 	position:absolute;
-	z-index:2;
-	top:0;
+	z-index:5;
 	left:0;
 	width:100%;
 	height:100%;
@@ -639,14 +638,41 @@ img.dpmynd {
 	transition:.3s ease;
 }
 
-.show-popup .popup {
+.show-popup{
 	opacity:1;
 	visibility: visible;
 }
 
 .popup > iframe {
-	position:absolute;
-	top:50px;
-	left:50%;
-	margin-left:-280px;
+	height: 60%;
+	width: 70%;
+	position: absolute;
+	background-color: black;
+	align-self: center;
+	margin-top: 20%;
+	left: 15%;
+	/* right: 25%; */
+	z-index: 3;
+}
+.pop {
+	height: 60%;
+	width: 70%;
+	position: absolute;
+	background-color: black;
+	align-self: center;
+	margin-top: 20%;
+	left: 15%;
+	/* right: 25%; */
+	z-index: 3;
+}
+.aefingar {
+	display: inline-grid;
+	list-style-type: decimal;
+}
+.reps{
+	width:50px;
+}
+.kg
+{
+	width: 50px;
 }
